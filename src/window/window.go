@@ -28,6 +28,8 @@ func (w *window) Run() {
 
 		rl.ClearBackground(w.config.WindowBackgroundColor)
 
+		w.drawInfo()
+
 		w.game.Draw()
 
 		rl.EndDrawing()
