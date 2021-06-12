@@ -1,21 +1,19 @@
 package main
 
-import rl "github.com/gen2brain/raylib-go/raylib"
+import (
+	"github.com/FourLineCode/tictac-go/internal/config"
+	"github.com/FourLineCode/tictac-go/src/window"
+)
+
+const (
+	WIDTH  = 800
+	HEIGHT = 600
+)
 
 func main() {
-	rl.InitWindow(800, 600, "raylib [core] example - basic window")
+	cfg := config.GetConfig()
 
-	rl.SetTargetFPS(60)
+	win := window.New(cfg)
 
-	for !rl.WindowShouldClose() {
-		rl.BeginDrawing()
-
-		rl.ClearBackground(rl.RayWhite)
-
-		rl.DrawText("Congrats! You created your first window!", 190, 200, 20, rl.LightGray)
-
-		rl.EndDrawing()
-	}
-
-	rl.CloseWindow()
+	win.Run()
 }
