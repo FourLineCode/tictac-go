@@ -14,8 +14,8 @@ func drawLine(start, end rl.Vector2) {
 }
 
 func drawCircle(x, y int32) {
-	rl.DrawCircle(x, y, circleRadius, rl.Black)
-	rl.DrawCircle(x, y, circleRadius-lineWidth, rl.DarkGray)
+	rl.DrawCircle(x, y, circleRadius, textureColor)
+	rl.DrawCircle(x, y, circleRadius-lineWidth, cfg.WindowBackgroundColor)
 }
 
 func drawCross(startX, startY float32) {
